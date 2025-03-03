@@ -7,9 +7,9 @@ from tensorflow.keras.models import load_model
 import xgboost as xgb
 
 # Load models
-nn_model = load_model("models/nn_model.h5")
+nn_model = load_model("nn_model.h5")
 xgb_model = xgb.Booster()
-xgb_model.load_model("models/xgb_model.json")
+xgb_model.load_model("xgb_model.json")
 
 st.title("Customer Churn Prediction App 🚀")
 st.write("This app predicts customer churn using a Neural Network + XGBoost ensemble.")
@@ -53,12 +53,12 @@ with st.expander("💰 Financial Information", expanded=False):
 
 
 # Load encoders
-encoder_info = joblib.load("models/encoder.pkl")
+encoder_info = joblib.load("encoder.pkl")
 encoders = encoder_info["encoders"]  
 categorical_cols = encoder_info["features"]  
 
 # Load scaler
-scaler_info = joblib.load("models/scaler.pkl")
+scaler_info = joblib.load("scaler.pkl")
 scaler = scaler_info["scaler"]  
 numerical_cols = scaler_info["features"]  
 
