@@ -75,9 +75,6 @@ if st.button("Submit"):
     # Scale numerical features
     input_df[numerical_cols] = scaler.transform(input_df[numerical_cols])
 
-    st.write("Encoded and Scaled Input:")
-    st.write(input_df)
-
     # Convert to NumPy for Neural Network
     input_np = input_df.to_numpy()
 
